@@ -18,7 +18,4 @@ Write a query to print the list of CITY that does not start with vowels in lexic
 
 --Solution
 
-SELECT DISTINCT CITY 
-FROM STATION 
-WHERE NOT (CITY LIKE 'A%' OR  CITY  LIKE 'E%' OR CITY  LIKE 'I%' OR CITY  LIKE 'O%' OR CITY  LIKE 'U%')
-ORDER BY CITY;
+select distinct city from station where NOT REGEXP_LIKE (UPPER(city),'^[AEIOU].*$');
