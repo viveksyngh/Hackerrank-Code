@@ -17,6 +17,6 @@ Write a query to find the corresponding Western Longitude value for the greatest
 
 --Solution
 
-SELECT ROUND(LONG_W,4)
+SELECT TRIM(TRAILING '0' FROM ROUND(LONG_W, 4))
 FROM STATION
 WHERE LAT_N = (SELECT MAX(LAT_N) FROM STATION WHERE LAT_N < 137.2345);
