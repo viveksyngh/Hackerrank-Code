@@ -17,6 +17,4 @@ Write a query to print the list of CITY that start with vowels in lexicographica
 
 --Solution
 
-SELECT CITY
-FROM STATION
-WHERE CITY Like '[AEIOU]%';
+SELECT DISTINCT city FROM station WHERE city LIKE "A%" OR city LIKE "E%" OR city LIKE "I%" OR city LIKE "O%" OR city LIKE "U%";
