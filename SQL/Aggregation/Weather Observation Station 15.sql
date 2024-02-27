@@ -20,3 +20,7 @@ Write a query to find the corresponding Western Longitude value for the greatest
 SELECT TRIM(TRAILING '0' FROM ROUND(LONG_W, 4))
 FROM STATION
 WHERE LAT_N = (SELECT MAX(LAT_N) FROM STATION WHERE LAT_N < 137.2345);
+
+--Alternative Solution will be
+
+select round(long_w,4) from station where lat_n < 137.2345 order by lat_n desc limit 1;
